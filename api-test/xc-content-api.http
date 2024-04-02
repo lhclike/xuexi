@@ -1,0 +1,98 @@
+### 查询课程信息
+POST localhost:63010/content/course/list?pageNo=1&pageSize=2
+Content-Type: application/json
+
+{
+  "auditStatus": "202004",
+  "courseName": "java",
+  "publishStatus":""
+}
+
+### 查询课程分类
+GET {{content_host}}/content/course-category/tree-nodes
+
+### 新增课程
+POST {{content_host}}/content/course
+Content-Type: application/json
+
+{
+  "charge": "201001",
+  "price": 10,
+  "originalPrice":100,
+  "qq": "22333",
+  "wechat": "223344",
+  "phone": "13333333",
+  "validDays": 365,
+  "mt": "1-1",
+  "st": "1-1-1",
+  "name": "",
+  "pic": "fdsf",
+  "teachmode": "200002",
+  "users": "初级人员",
+  "tags": "tagstagstags",
+  "grade": "204001",
+  "description": "java网络编程高级java网络编程高级java网络编程高级"
+}
+
+###课程查询
+GET localhost:63040/content/course/40
+Content-Type: application/json
+
+
+###
+GET localhost:63040/content/teachplan/121/tree-nodes
+Content-Type: application/json
+###
+POST localhost:63050/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="1.jpg"
+Content-Type: application/octet-stream
+
+< F:\springcloud-xuecheng/1.jpg
+
+
+### 课程计划绑定视频
+POST localhost:63040/content/teachplan/association/media
+Content-Type: application/json
+
+{
+  "mediaId": "",
+  "fileName": "",
+  "teachplanId": ""
+}
+
+
+###
+GET localhost:63040/content/testfreemarker
+Content-Type: application/json
+###
+POST localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=authorization_code&code=rxv95h&redirect_uri=http://www.51xuecheng.cn
+
+### 密码模式
+POST localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=zhangsan&password=123
+
+
+### 密码模式
+POST localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=zhangsan&password=123
+
+###校验jwt令牌
+POST localhost:63070/auth/oauth/check_token?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2OTg3MTk4MzcsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjY3MTIxMmM2LWE3ZGMtNDNjMy1hNjc4LWExN2Y5YTI4ZDdiYiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.Exo10kneRNkG3BvJwLqYl0rxLTWdOshMVUZIpGkZMq4
+
+###
+GET http://localhost:63040/content/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2OTg3MTk4MzcsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjY3MTIxMmM2LWE3ZGMtNDNjMy1hNjc4LWExN2Y5YTI4ZDdiYiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.Exo10kneRNkG3BvJwLqYl0rxLTWdOshMVUZIpGkZMq4
+
+### 通过网关访问资源服务
+GET http://localhost:63010/content/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2OTg3MjQyNjAsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6IjliMjc4MDAyLWNlYjktNDk3ZC05Zjg0LThhYWFlMWRhYjI0YiIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.GcWMxT518_KljZ2wF5YDRjrXgtZgo_JqmsnoM6CjVEA
+
+
+### 密码模式
+POST localhost:63070/auth/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=stu1&password=111111
+
+
+###校验jwt令牌
+POST localhost:63070/auth/oauth/check_token?token=
+
